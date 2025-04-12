@@ -17,7 +17,10 @@ namespace PartnerManagementApp
 
         private void LoadPartners()
         {
-            PartnerGrid.ItemsSource = _db.Partners.ToList();
+            using (var context = new AppDbContext())
+            {
+                PartnerGrid.ItemsSource = context.Partners.ToList();
+            }
         }
 
         private void AddPartner_Click(object sender, RoutedEventArgs e)

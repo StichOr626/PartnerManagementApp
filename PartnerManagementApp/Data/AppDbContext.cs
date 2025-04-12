@@ -15,9 +15,14 @@ namespace PartnerManagementApp.Data
         public DbSet<ProductType> ProductTypes => Set<ProductType>();
         public DbSet<MaterialType> MaterialTypes => Set<MaterialType>();
 
+        
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlite("Data Source=partners.db");
+        }
+        public AppDbContext()
+        {
+            Database.EnsureCreated();
         }
     }
 }
