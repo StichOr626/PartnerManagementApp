@@ -1,17 +1,30 @@
 ﻿<Window x:Class="PartnerManagementApp.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="Список партнеров" Height="450" Width="800">
+        Title="Список партнеров" Height="450" Width="900" Icon="Assets\iconka.ico">
     <Grid Margin="10">
+        
         <StackPanel>
-            <Button Content="Добавить партнера" Width="150" Margin="0,0,0,10" Click="AddPartner_Click"/>
+            <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+                <Image Source="Assets/logo.png" Height="50" Width="50" Margin="0,0,10,0"/>
+                <TextBlock Text="Управление партнёрами" FontSize="24" VerticalAlignment="Center"/>
+            </StackPanel>
+
+            <WrapPanel>
+                <Button Content="Редактировать" Width="150" Click="EditPartner_Click"/>
+                <Button Content="Удалить" Width="150" Click="DeletePartner_Click"/>
+                <Button Content="Добавить партнера" Width="150" Click="AddPartner_Click" Height="50"/>
+                <Button Content="История продаж" Width="150" Click="ViewSales_Click" Height="50"/>
+            </WrapPanel>
             <DataGrid x:Name="PartnerGrid" AutoGenerateColumns="False" Height="300"
-                      MouseDoubleClick="PartnerGrid_MouseDoubleClick">
+                      MouseDoubleClick="PartnerGrid_MouseDoubleClick" Margin="0,10,0,0">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="Название" Binding="{Binding Name}"/>
                     <DataGridTextColumn Header="Тип" Binding="{Binding Type}"/>
                     <DataGridTextColumn Header="Рейтинг" Binding="{Binding Rating}"/>
                     <DataGridTextColumn Header="Email" Binding="{Binding Email}"/>
+                    <DataGridTextColumn Header="Скидка" Binding="{Binding Discount, StringFormat={}{0:P0}}" />
+
                 </DataGrid.Columns>
             </DataGrid>
         </StackPanel>

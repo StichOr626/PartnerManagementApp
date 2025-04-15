@@ -1,0 +1,14 @@
+﻿<Window x:Class="PartnerManagementApp.SalesHistoryWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="История продаж" Height="400" Width="600">
+    <Grid Margin="10">
+        <DataGrid x:Name="SalesGrid" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Продукт" Binding="{Binding ProductName}"/>
+                <DataGridTextColumn Header="Количество" Binding="{Binding Quantity}"/>
+                <DataGridTextColumn Header="Дата" Binding="{Binding SaleDate}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Window>

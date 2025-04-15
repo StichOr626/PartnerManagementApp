@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,5 +19,9 @@ namespace PartnerManagementApp.Models
         public string Email { get; set; } = string.Empty;
 
         public List<Sale> Sales { get; set; } = new();
+        [NotMapped]
+        public decimal Discount { get; set; }
+
     }
+
 }
