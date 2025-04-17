@@ -11,10 +11,10 @@
             </StackPanel>
 
             <WrapPanel>
-                <Button Content="Редактировать" Width="150" Click="EditPartner_Click"/>
-                <Button Content="Удалить" Width="150" Click="DeletePartner_Click"/>
-                <Button Content="Добавить партнера" Width="150" Click="AddPartner_Click" Height="50"/>
-                <Button Content="История продаж" Width="150" Click="ViewSales_Click" Height="50"/>
+                <Button Content="Редактировать" Width="150" Click="EditPartner_Click" Background="#FF67BA80" Foreground="White" BorderBrush="White"/>
+                <Button Content="Удалить" Width="150" Click="DeletePartner_Click" Background="#FF67BA80" BorderBrush="White" Foreground="White"/>
+                <Button Content="Добавить партнера" Width="150" Click="AddPartner_Click" Height="50" Background="#FF67BA80" Foreground="White" BorderBrush="White"/>
+                <Button Content="История продаж" Width="150" Click="ViewSales_Click" Height="50" Background="#FF67BA80" Foreground="White" BorderBrush="White"/>
             </WrapPanel>
             <DataGrid x:Name="PartnerGrid" AutoGenerateColumns="False" Height="300"
                       MouseDoubleClick="PartnerGrid_MouseDoubleClick" Margin="0,10,0,0">
